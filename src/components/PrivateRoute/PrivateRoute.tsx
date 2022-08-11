@@ -16,5 +16,5 @@ export const PrivateRoute = ({ page }: { page: JSX.Element }) => {
     dispatch(verifyJwt(jwt.token));
   }, [jwt, isSuccess]);
 
-  return isAuthenticated ? page : <Navigate replace to="/signin" />;
+  return isAuthenticated ? page : <Navigate replace to="/login" />;
 };

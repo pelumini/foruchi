@@ -3,18 +3,14 @@ import { Header, Product } from 'components';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { getProducts } from 'store/slices/productSlice';
 
-interface HomeProps {
-  className?: string;
-}
-
-export const Home: React.FC<HomeProps> = ({ className }): JSX.Element => {
+export const Home: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
-  const { cart, products } = useAppSelector((state) => state.product);
+  // const { cart, products } = useAppSelector((state) => state.product);
 
-  useEffect(() => {
-    dispatch(getProducts());
-  }, []);
+  // useEffect(() => {
+  //   dispatch(getProducts());
+  // }, []);
 
   return (
     <div>
