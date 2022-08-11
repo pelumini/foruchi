@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import { Home, Cart, Login, Register } from 'pages';
 import { theme } from 'shared/utils/theme';
+import { store } from 'store/store';
 
 interface AppProps {
   className?: string;
@@ -28,3 +29,10 @@ export const App: React.FC<AppProps> = ({ className }): JSX.Element => {
     </ThemeProvider>
   );
 };
+
+type CypressWindow = Window & typeof globalThis & { Cypress: any; store: any };
+const thisWindow = window as CypressWindow;
+if (thisWindow.Cypress) {
+  console.log('CYPRESS WINDOW');
+  thisWindow.store = store;
+}
