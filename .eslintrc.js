@@ -28,6 +28,8 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
     'no-restricted-exports': 'off',
     camelcase: 'off',
     'import/no-cycle': 'off',
