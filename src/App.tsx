@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from '@mui/material';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,6 +14,7 @@ import { store } from 'store/store';
 export const App: React.FC = (): JSX.Element => {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Router>
         <Routes>
           <Route path="/" element={<PrivateRoute page={<Home />} />} />

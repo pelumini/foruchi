@@ -6,11 +6,11 @@ import { getProducts } from 'store/slices/productSlice';
 export const Home: React.FC = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
-  // const { cart, products } = useAppSelector((state) => state.product);
+  const { cart, products } = useAppSelector((state) => state.product);
 
-  // useEffect(() => {
-  //   dispatch(getProducts());
-  // }, []);
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
 
   return (
     <div>
@@ -25,10 +25,10 @@ export const Home: React.FC = (): JSX.Element => {
           marginTop: '48px',
         }}
       >
-        {/* {products.length > 0 &&
+        {products.length > 0 &&
           products.map((product) => (
             <Product key={product._id} product={product} />
-          ))} */}
+          ))}
       </div>
     </div>
   );

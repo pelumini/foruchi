@@ -228,7 +228,7 @@ export const Register: React.FC<RegisterProps> = ({
 
       <div style={{ marginTop: '30px' }}>
         <small>
-          <span>By creating an account, you agree to Amazon&apos;s</span>
+          <span>By creating an account, you agree to Foruchi&apos;s</span>
         </small>
       </div>
 

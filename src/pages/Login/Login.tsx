@@ -17,11 +17,7 @@ import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { login, reset } from 'store/slices/authSlice';
 import { LoginUser } from 'types/auth/LoginUser.interface';
 
-interface LoginProps {
-  className?: string;
-}
-
-export const Login: React.FC<LoginProps> = ({ className }): JSX.Element => {
+export const Login: React.FC = (): JSX.Element => {
   const {
     text: email,
     shouldDisplayError: emailHasError,
@@ -77,6 +73,7 @@ export const Login: React.FC<LoginProps> = ({ className }): JSX.Element => {
 
   if (isLoading)
     return <CircularProgress sx={{ marginTop: '64px' }} color="primary" />;
+
   return (
     <>
       <Box
@@ -91,9 +88,8 @@ export const Login: React.FC<LoginProps> = ({ className }): JSX.Element => {
         <form onSubmit={onSubmitHandler}>
           <Grid container direction="column" justifyContent="flex-start">
             <Typography variant="h4" component="h1">
-              Sign-In
+              Login
             </Typography>
-
             <InputLabel
               sx={{ fontWeight: 500, marginTop: 1, color: '#000000' }}
               htmlFor="email"
@@ -112,7 +108,6 @@ export const Login: React.FC<LoginProps> = ({ className }): JSX.Element => {
               variant="outlined"
               size="small"
             />
-
             <InputLabel
               sx={{ fontWeight: 500, marginTop: 1, color: '#000000' }}
               htmlFor="password"
@@ -134,7 +129,6 @@ export const Login: React.FC<LoginProps> = ({ className }): JSX.Element => {
               size="small"
               placeholder="Minimum 6 characters required"
             />
-
             <Button
               id="signin-btn"
               disabled={
@@ -151,14 +145,14 @@ export const Login: React.FC<LoginProps> = ({ className }): JSX.Element => {
               }}
               type="submit"
             >
-              Sign-In
+              Login
             </Button>
           </Grid>
         </form>
 
         <div style={{ marginTop: '30px' }}>
           <small>
-            <span>By continuing, you agree to Amazon&apos;s</span>
+            <span>By continuing, you agree to Foruchi&apos;s</span>
           </small>
         </div>
 
@@ -177,7 +171,7 @@ export const Login: React.FC<LoginProps> = ({ className }): JSX.Element => {
       </Box>
       <div style={{ marginTop: '16px' }}>
         <Divider>
-          <small style={{ color: '#767676' }}>New to Amazon?</small>
+          <small style={{ color: '#767676' }}>New to Foruchi?</small>
         </Divider>
 
         <Link
