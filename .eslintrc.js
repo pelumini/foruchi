@@ -29,6 +29,7 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'no-restricted-exports': 'off',
+    camelcase: 'off',
     'no-undef': 'off',
     'no-shadow': 'off',
     'no-underscore-dangle': 'off',
