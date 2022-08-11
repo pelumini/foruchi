@@ -1,6 +1,6 @@
 import { ChangeEvent, useReducer } from 'react';
 import { ValidatorFn } from 'shared/utils/validation/models/validatorFn';
-import { Action } from '../../shared/models/action.interface';
+import { Action } from 'types/action/action.interface';
 import {
   InputActionType,
   INPUT_ACTION_BLUR,
