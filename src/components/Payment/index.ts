@@ -1,1 +1,1 @@
-export { Payment as default } from './Payment';
+export { PaymentGateway as default } from './Payment';

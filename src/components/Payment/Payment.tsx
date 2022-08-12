@@ -10,7 +10,7 @@ import axios from 'axios';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { resetCart } from 'store/slices/productSlice';
 
-export const Payment = () => {
+const Payment = () => {
   const { cart } = useAppSelector((state) => state.product);
   const dispatch = useAppDispatch();
   const [isProcessing, setIsProcessing] = useState(false);
@@ -86,8 +86,10 @@ export const Payment = () => {
   );
 };
 
-const PaymentGateway = () => {
-  const stripePromise = loadStripe('pk_test_Hpa0K7PQIXM2i2STQXenukfE');
+export const PaymentGateway = () => {
+  const stripePromise = loadStripe(
+    'pk_test_51LGPApHKKWnLHiCpeFjR0SlU8CsPNRzgPMxqpWy8fjqDCA4G6fr4fvZAqiIRvLaumWXJldwhH4EP6oiPNzVAPkBS00isE10rjv'
+  );
 
   return (
     <Elements stripe={stripePromise}>

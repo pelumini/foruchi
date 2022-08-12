@@ -1,4 +1,4 @@
-import { Header, Payment, Product } from 'components';
+import { Header, Product, PaymentGateway } from 'components';
 import { useAppSelector } from 'store/hooks';
 
 export const Cart: React.FC = (): JSX.Element => {
@@ -46,7 +46,7 @@ export const Cart: React.FC = (): JSX.Element => {
           </span>
         </div>
 
-        {totalQty > 0 && <Payment />}
+        {totalQty > 0 && <PaymentGateway />}
       </div>
     </div>
   );
