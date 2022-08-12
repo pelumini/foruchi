@@ -12,43 +12,30 @@ import { resetCart } from 'store/slices/productSlice';
 
 export const Payment = () => {
   const { cart } = useAppSelector((state) => state.product);
-
   const dispatch = useAppDispatch();
-
   const [isProcessing, setIsProcessing] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState('');
-
   const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
-
   const stripe = useStripe();
   const elements = useElements();
 
   useEffect(() => {
     if (totalQty === 0) return;
-
     if (paymentStatus !== 'succeeded') return;
-
     dispatch(resetCart());
   });
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (totalQty === 0) return;
-
     if (!stripe || !elements) return;
-
     const cardEl = elements.getElement(CardElement);
-
     setIsProcessing(true);
-
     try {
       const res = await axios.post(`${process.env.REACT_APP_BASE_API}/stripe`, {
         cart,
       });
-
       const { client_secret: clientSecret } = res.data;
-
       const { paymentIntent } = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: cardEl!,
@@ -64,7 +51,6 @@ export const Payment = () => {
       console.error(error);
       setPaymentStatus('Payment failed!');
     }
-
     setIsProcessing(false);
   };
 
