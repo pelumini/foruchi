@@ -8,11 +8,8 @@ import { logout, selectedUser } from 'store/slices/authSlice';
 export const Header = () => {
   const { user } = useAppSelector(selectedUser);
   const { cart } = useAppSelector((state) => state.product);
-
   const [cartCount, setCartCount] = useState(0);
-
   const dispatch = useAppDispatch();
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -39,8 +36,8 @@ export const Header = () => {
               paddingTop: '10px',
               cursor: 'pointer',
             }}
-            src="/amazon-logo.png"
-            alt="amazon logo"
+            src="/foruchi-logo-3.png"
+            alt="foruchi logo"
           />
           <div style={{ display: 'flex' }}>
             <div>

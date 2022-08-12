@@ -16,7 +16,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
       justifyContent="flex-start"
       alignItems="center"
     >
-      <img src="foruchi-logo.png" alt="foruchi-logo" height="40px" />
+      <img src="foruchi-logo-3.png" alt="foruchi-logo" height="40px" />
       <main>{children}</main>
     </Grid>
   );
