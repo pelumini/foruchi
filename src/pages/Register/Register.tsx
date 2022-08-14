@@ -250,7 +250,7 @@ export const Register: React.FC = (): JSX.Element => {
               to="/login"
               style={{ textDecoration: 'none', color: '#0000ee' }}
             >
-              Sign-in
+              Login
             </Link>
           </small>
         </div>
